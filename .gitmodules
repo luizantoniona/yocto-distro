@@ -1,0 +1,4 @@
+[submodule "source/bitbake"]
+	path = source/bitbake
+	url = git://git.openembedded.org/bitbake
+	branch = 2.8
