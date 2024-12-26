@@ -6,3 +6,7 @@
 	path = source/openembedded-core
 	url = git://git.openembedded.org/openembedded-core
 	branch = scarthgap
+[submodule "source/meta-openembedded"]
+	path = source/meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+	branch = scarthgap
