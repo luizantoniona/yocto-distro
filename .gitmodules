@@ -1,3 +1,6 @@
 [submodule "source/bitbake"]
 	path = source/bitbake
 	url = git://git.openembedded.org/bitbake
+[submodule "source/meta-openembedded"]
+	path = source/meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
