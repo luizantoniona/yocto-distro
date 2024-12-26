@@ -8,14 +8,21 @@ distro = ""
 build_dir = "./build"
 source_dir = "./source"
 
-conf_dir = os.path.join(build_dir, "conf")
+conf_dir = os.path.join(
+    build_dir,
+    "conf",
+)
 
 template_local_conf = os.path.join(
-    source_dir, "templates", "local.conf"
+    source_dir,
+    "templates",
+    "local.conf",
 )
 
 template_bblayers_conf = os.path.join(
-    source_dir, "templates", "bblayers.conf"
+    source_dir,
+    "templates",
+    "bblayers.conf",
 )
 
 layers = [
@@ -41,6 +48,4 @@ with open(bblayers_conf_path, "a") as bblayers_conf:
     for layer in layers:
         bblayers_conf.write(f"  {layer}\n")
 
-print(
-    f"Configuration setup complete. You can now build using the build directory at {build_dir}"
-)
+print(f"Configuration setup complete. You can now build using the build directory at {build_dir}")
