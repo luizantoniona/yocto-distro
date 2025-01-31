@@ -1,4 +1,28 @@
-TODO
+## Custom Yocto Distribution Project
+
+## How to build:
+
+- Update submodules:
+```
+git submodule update --remote
+```
+
+- Generate conf files:
+```
+python3 setup.py
+```
+
+- Start building enviroment:
+```
+source source/openembedded-core/oe-init-build-env build
+```
+
+- Generate image:
+```
+bitbake core-image-minimal
+```
+
+
 ---
 
 <p align="center">
