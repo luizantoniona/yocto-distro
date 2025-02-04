@@ -19,9 +19,8 @@ source source/openembedded-core/oe-init-build-env build
 
 - Generate image:
 ```
-bitbake core-image-minimal
+bitbake custom-image
 ```
-
 
 ---
 
