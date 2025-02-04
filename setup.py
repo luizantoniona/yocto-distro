@@ -3,12 +3,10 @@ import os
 machine = "raspberrypi4"
 distro = "custom-distro"
 
-build_dir = "./build"
-source_dir = "workdir/source"
-
+base_dir = os.path.abspath(os.path.dirname(__file__))
+source_dir = os.path.join(base_dir, "source")
+build_dir = os.path.join(base_dir, "build")
 conf_dir = os.path.join(build_dir, "conf")
-template_local_conf = os.path.join(source_dir, "templates", "local.conf")
-template_bblayers_conf = os.path.join(source_dir, "templates", "bblayers.conf")
 
 layers = [
     os.path.join(source_dir, "meta-layer"),
@@ -24,15 +22,17 @@ with open(local_conf_path, "w") as local_conf:
     local_conf.writelines(
         [
             f'MACHINE = "{machine}"\n',
-            f'DISTRO = "{distro}"\n',
-            'PACKAGE_CLASSES = "package_rpm"\n',
-            'EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh"\n',
-            'IMAGE_INSTALL:append = " python3 git"\n',
+            f'DISTRO = "{distro}"\n\n',
+            "",
+            'PACKAGE_CLASSES = "package_ipk"\n',
+            "",
             'ENABLE_UART = "1"\n',
             'GPU_MEM = "128"\n',
+            "",
             'DL_DIR ?= "${TOPDIR}/downloads"\n',
             'SSTATE_DIR ?= "${TOPDIR}/sstate-cache"\n',
-            'INHERIT += "rm_work"\n',
+            "",
+            'INHERIT += "rm_work"\n\n',
         ]
     )
 
